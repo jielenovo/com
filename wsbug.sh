@@ -13,49 +13,14 @@ domain=$(cat /etc/v2ray/domain)
 else
 domain=$IP
 fi
-# MENU VLESS WS 
-echo -e "\e[0m                                                       "
-echo -e "\e[94m    .----------------------------------------------------.    "
-echo -e "\e[94m    |                    V2RAY VLESS MENU                |    "
-echo -e "\e[94m    '----------------------------------------------------'    "
+
+# ADD USER VLESS WS
 echo -e ""
-echo -e "$RED VLess Non TLS      : $(grep -c -E "^###" "/etc/v2ray/vnone.json")${NC}"
-echo -e "$RED VLess TLS          : $(grep -c -E "^###" "/etc/v2ray/vless.json")${NC}"
-echo -e ""
-echo -e "\e[1;31m* [1]\e[0m \e[1;32m: Create V2RAY Vless Websocket Account\e[0m"
-echo -e "\e[1;31m* [2]\e[0m \e[1;32m: Deleting V2RAY Vless Websocket Account\e[0m"
-echo -e "\e[1;31m* [3]\e[0m \e[1;32m: Extending VLESS Account Active Life\e[0m"
-echo -e "\e[1;31m* [4]\e[0m \e[1;32m: Check User Login V2RAY VLESS\e[0m"
-echo -e ""
-echo -e ""
-read -p "        Select From Options [1-4 or x]: " menuvless
-echo -e ""
-case $menuvless in
-1)
-add-vless
-;;
-2)
-del-vless
-;;
-3)
-renew-vless
-;;
-4)
-cek-vless
-;;
-x)
-menu
-;;
-*)
-echo " Please enter an correct number!!"
-;;
-esac
-echo -e ""
+tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
+none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 echo -e " ${ORANGE}══════════════════════════════════════════════════════════════════${NC}"
 echo -e " ${BGBLUE}                     ┃ V2RAY/VLESS ┃                              ${NC}"
 echo -e " ${ORANGE}══════════════════════════════════════════════════════════════════${NC}"
-tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
-none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "User: " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/vless.json | wc -l)
@@ -139,4 +104,42 @@ echo     " ${vlesslink8}"
 echo -e "\e[$line════════════════════════\e[m"
 echo -e "Created   : $hariini"
 echo -e "Expired   : $exp"
+}
 # MENU VLESS WS
+clear
+echo -e ""
+echo -e "\e[94m    .----------------------------------------------------.    "
+echo -e "\e[94m    |                    V2RAY VLESS MENU                |    "
+echo -e "\e[94m    '----------------------------------------------------'    "
+echo -e ""
+echo -e "$RED VLess Non TLS      : $(grep -c -E "^###" "/etc/v2ray/vnone.json")${NC}"
+echo -e "$RED VLess TLS          : $(grep -c -E "^###" "/etc/v2ray/vless.json")${NC}"
+echo -e ""
+echo -e "\e[1;31m* [1]\e[0m \e[1;32m: Create V2RAY Vless Websocket Account\e[0m"
+echo -e "\e[1;31m* [2]\e[0m \e[1;32m: Deleting V2RAY Vless Websocket Account\e[0m"
+echo -e "\e[1;31m* [3]\e[0m \e[1;32m: Extending VLESS Account Active Life\e[0m"
+echo -e "\e[1;31m* [4]\e[0m \e[1;32m: Check User Login V2RAY VLESS\e[0m"
+echo -e ""
+echo -e ""
+read -p "        Select From Options [1-4 or x]: " menuvless
+echo -e ""
+case $menuvless in
+1)
+add-vless
+;;
+2)
+del-vless
+;;
+3)
+renew-vless
+;;
+4)
+cek-vless
+;;
+x)
+menu
+;;
+*)
+echo " Please enter an correct number!!"
+;;
+esac
