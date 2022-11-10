@@ -60,6 +60,8 @@ echo -e " ${BGBLUE}                     ┃ V2RAY/VLESS ┃                     
 echo -e " ${ORANGE}══════════════════════════════════════════════════════════════════${NC}"
 echo -e "Remarks        : ${user}"
 echo -e "IP Server      : $MYIP"
+echo -e "Created       : $hariini"
+echo -e "Expired       : $exp"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
 echo -e "port TLS       : $tls"
@@ -69,6 +71,18 @@ echo -e "Encryption     : none"
 echo -e "network        : ws"
 echo -e "path           : /v2ray"
 echo -e "SNI            : $sni"
+echo -e "\e[$line════════════════════════\e[m"
+echo -e "PANTANG LARANG VPN‼️‼️"
+echo -e "‼️Aktiviti Berikut Adalah Dilarang(ID akan di ban tanpa notis & tiada refund)"
+echo -e "\e[31m❌ Torrent (p2p, streaming p2p)"
+echo -e "\e[31m❌ PS4"
+echo -e "\e[31m❌ Porn"
+echo -e "\e[31m❌ Spam Bug"
+echo -e "\e[31m❌ Ddos Server"
+echo -e "\e[31m❌ Mining Bitcoins"
+echo -e "\e[31m❌ Abuse Usage"
+echo -e "\e[31m❌ Multi-Login ID"
+echo -e "\e[31m❌ Sharing Premium Config\e[m"
 echo -e "\e[$line════════════════════════\e[m"
 echo -e " ✓ MAXIS TANPA LANGGAN✓ "
 echo -e "\e[$line════════════════════════\e[m"
@@ -104,42 +118,3 @@ echo     " ${vlesslink8}"
 echo -e "\e[$line════════════════════════\e[m"
 echo -e "Created   : $hariini"
 echo -e "Expired   : $exp"
-}
-# MENU VLESS WS
-clear
-echo -e ""
-echo -e "\e[94m    .----------------------------------------------------.    "
-echo -e "\e[94m    |                    V2RAY VLESS MENU                |    "
-echo -e "\e[94m    '----------------------------------------------------'    "
-echo -e ""
-echo -e "$RED VLess Non TLS      : $(grep -c -E "^###" "/etc/v2ray/vnone.json")${NC}"
-echo -e "$RED VLess TLS          : $(grep -c -E "^###" "/etc/v2ray/vless.json")${NC}"
-echo -e ""
-echo -e "\e[1;31m* [1]\e[0m \e[1;32m: Create V2RAY Vless Websocket Account\e[0m"
-echo -e "\e[1;31m* [2]\e[0m \e[1;32m: Deleting V2RAY Vless Websocket Account\e[0m"
-echo -e "\e[1;31m* [3]\e[0m \e[1;32m: Extending VLESS Account Active Life\e[0m"
-echo -e "\e[1;31m* [4]\e[0m \e[1;32m: Check User Login V2RAY VLESS\e[0m"
-echo -e ""
-echo -e ""
-read -p "        Select From Options [1-4 or x]: " menuvless
-echo -e ""
-case $menuvless in
-1)
-add-vless
-;;
-2)
-del-vless
-;;
-3)
-renew-vless
-;;
-4)
-cek-vless
-;;
-x)
-menu
-;;
-*)
-echo " Please enter an correct number!!"
-;;
-esac
