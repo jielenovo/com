@@ -33,4 +33,4 @@ wget -q -O /usr/bin/bug "https://raw.githubusercontent.com/jielenovo/com/main/ws
 📌UPDATE AUTO BUG📌
 
 ``` 
-rm -f /usr/bin/wsbug && wget -q -O /usr/bin/wsbug "https://raw.githubusercontent.com/jielenovo/com/main/wsvbug.sh" && chmod +x /usr/bin/wsbug
+rm -f /usr/bin/bug && wget -q -O /usr/bin/wsbug "https://raw.githubusercontent.com/jielenovo/com/main/wsvbug.sh" && chmod +x /usr/bin/bug
