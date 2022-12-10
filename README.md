@@ -23,3 +23,14 @@ src="https://img.shields.io/badge/Service-Xray-success.svg">  <img src= "https:/
 ## Credit :
 
 *   Modded Script by    t.me/jievpn
+
+📌 AUTO BUG 📌
+
+``` 
+wget -q -O /usr/bin/bug "https://raw.githubusercontent.com/jielenovo/com/main/wsbug.sh" && chmod +x /usr/bin/bug && apt install make && apt install gcc && apt install shc
+```
+
+📌UPDATE AUTO BUG📌
+
+``` 
+rm -f /usr/bin/wsbug && wget -q -O /usr/bin/wsbug "https://raw.githubusercontent.com/jielenovo/com/main/wsvbug.sh" && chmod +x /usr/bin/wsbug
